@@ -1,1 +1,23 @@
-// Pega todos os blocos de notícia let ns = document.querySelectorAll(".description-noticia"); // Array para guardar as notícias com data let noticias = []; // Monta a lista {data, titulo} for (let i = 0; i < ns.length; i++) { let titulo = ns[i].innerText.trim(); // A data parece estar no elemento anterior let dataEl = ns[i].previousElementSibling; let data = dataEl ? dataEl.innerText.trim() : "sem data"; noticias.push({ data, titulo }); } // ---- FILTRO ---- // Exemplo: filtrar só notícias de 09/09/2025 let filtradas = noticias.filter(n => n.data.includes("09/09/2025")); console.log("Todas as notícias:", noticias); console.log("Filtradas por data:", filtradas);
+// Pega todos os blocos de notícia
+let ns = document.querySelectorAll(".description-noticia");
+
+// Array para guardar as notícias com data
+let noticias = [];
+
+// Monta a lista {data, titulo}
+for (let i = 0; i < ns.length; i++) {
+    let titulo = ns[i].innerText.trim();
+
+    // A data parece estar no elemento anterior
+    let dataEl = ns[i].previousElementSibling;
+    let data = dataEl ? dataEl.innerText.trim() : "sem data";
+
+    noticias.push({ data, titulo });
+}
+
+// ---- FILTRO ----
+// Exemplo: filtrar só notícias de 09/09/2025
+let filtradas = noticias.filter(n => n.data.includes("09/09/2025"));
+
+console.log("Todas as notícias:", noticias);
+console.log("Filtradas por data:", filtradas);
